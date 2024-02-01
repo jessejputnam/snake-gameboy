@@ -103,12 +103,16 @@ main {
     grid-template-columns: repeat(40, 1fr);
 }
 
-.cell {
+/* .cell {
 
-}
+} */
 
 .cell:hover {
     background-color: red;
+}
+
+.cell.snake {
+    background-color: var(--screen-darker);
 }
 
 /* ###############              ############### */
