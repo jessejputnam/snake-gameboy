@@ -1,3 +1,9 @@
+:root {
+    --screen-darker: rgb(59, 66, 56);
+    --screen-dark: rgb(108, 116, 104);
+    --screen-bkgd: rgb(152, 165, 146);
+}
+
 body {
     background-color: rgba(0, 10, 38, 0.434);
     background-image: url("car-backseat.jpeg");
@@ -68,11 +74,41 @@ main {
 }
 
 #screen {
-    background-color: rgb(152, 165, 146);
-    height: 90%;
     width: 75%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+#gameInfo {
+    height: 10%;
+    background-color: var(--screen-bkgd);
+    border-bottom: ridge var(--screen-dark);
+    color: var(--screen-darker);
+    font-family: "Press Start 2P";
+    font-size: clamp(.5rem, 1.3vw, .7rem);
+    display: flex;
+    align-items: flex-end;
+    padding: 0 10%;
+}
+
+#innerScreen {
+    width: 100%;
+    height: 100%;
+    background-color: var(--screen-bkgd);
+    
     border: solid 1px rgba(55, 55, 55, 0.514);
     border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(40, 1fr);
+}
+
+.cell {
+
+}
+
+.cell:hover {
+    background-color: red;
 }
 
 /* ###############              ############### */
@@ -257,16 +293,18 @@ div#right.press {
     transform: rotate(-25deg);
 }
 
-#btnStart {
-    width: 100%;
-    height: 10%;
-    background-color: rgb(94, 94, 94);
-    border-radius: 20px;
-}
+.start-select {
+    & > button {
+        width: 100%;
+        height: 10%;
+        background-color: rgb(94, 94, 94);
+        border-radius: 20px;
+    }
 
-#btnStart.press {
-    border-style: inset;
-    background-color: rgb(65, 65, 65);
+    & button.press {
+        border-style: inset;
+        background-color: rgb(65, 65, 65);
+    }
 }
 
 #bottomLogo {
