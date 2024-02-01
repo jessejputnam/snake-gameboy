@@ -42,4 +42,4 @@ document.addEventListener("keyup", (e) => {
   releaseVisual(key);
 });
 
-const game = setInterval(() => {}, 500);
+// const game = setInterval(() => {}, 500);
