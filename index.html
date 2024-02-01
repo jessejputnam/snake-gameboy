@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="/style.css">
+
+
+    <script type="module" src="/main.js" defer></script>
+
+    <title>Snake</title>
+</head>
+<body>
+    <main>
+        <!-- GAMEBOY -->
+        <div id="gameboy">
+            <div id="window">
+                <div id="power"></div>
+                <div id="screen"></div>
+            </div>
+            <p id="logo">GAME KID<span>TM</span></p>
+
+            <!-- CONTROLS -->
+            <div id="controls">
+                <div id="mainControls" class="controls-row">
+                    <!-- DPAD -->
+                    <div id="dpad">
+                        <div id="center"></div>
+                        <div id="up" class="dir btn"></div>
+                        <div id="right" class="dir btn"></div>
+                        <div id="down" class="dir btn"></div>
+                        <div id="left" class="dir btn"></div>
+                    </div >
+                    <!-- A/B BUTTONS -->
+                    <div id="buttons">
+                        <div>
+                            <div class="btn-ab btn" id="bbtn"></div>
+                            <p>B</p>
+                        </div>
+                        <div>
+                            <div class="btn-ab btn" id="abtn"></div>
+                            <p>A</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- START SELECT -->
+                <div id="startSelectRow" class="controls-row">
+                    <div class="start-select">
+                        <button class="btn" id="btnStart" type="button"></button>
+                        <p>SELECT</p>
+                    </div>
+                    <div class="start-select">
+                        <button class="btn" id="btnStart" type="button"></button>
+                        <p>START</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="bottomLogo">
+                <p>PRETENDO</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

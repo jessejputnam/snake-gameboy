@@ -1,0 +1,286 @@
+body {
+    background-color: rgba(0, 10, 38, 0.434);
+    background-image: url("/car-backseat.jpeg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-family:monospace;
+    color:rgb(7, 7, 120);
+    padding-top: 25px;
+}
+
+header {
+    height: 100px;
+    background-color: white;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#gameboy {
+    height: 100vw;
+    max-height: 800px;
+    width: 75vw;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 25px;
+    border-style: outset;
+
+    background-color: rgb(203, 203, 203);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 100px;
+}
+
+/* ###############        ############### */
+/* ############### SCREEN ############### */
+/* ###############        ############### */
+
+#window {
+    height: 45%;
+    width: 90%;
+    background-color: rgb(130, 130, 130);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-style: groove;
+}
+
+#power {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: rgba(255, 87, 51, 0.835);
+    box-shadow: 0 0 1px 2.5px rgba(64, 52, 52, 0.699);
+    left: 5%;
+    top: 35%;
+}
+
+#screen {
+    background-color: rgb(152, 165, 146);
+    height: 90%;
+    width: 75%;
+    border: solid 1px rgba(55, 55, 55, 0.514);
+    border-radius: 5px;
+}
+
+/* ###############              ############### */
+/* ############### BELOW SCREEN ############### */
+/* ###############              ############### */
+
+#logo {
+    transform: skewX(-5deg);
+    font-size: clamp(.6rem, 2vw, 1.1rem);
+    letter-spacing: .1ch;
+    
+    & span {
+        letter-spacing: 0;
+        font-size: clamp(.2rem, 1.3vw, .6rem);
+    }
+}
+
+/* ############### CONTROLS ############### */
+
+#controls {
+    height: 45%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.controls-row {
+    width: 100%;
+    height: 30%;
+    display: flex;
+}
+
+/* ############### DPAD AND A/B ############### */
+
+#mainControls {
+    height: 70%;
+    justify-content: space-between;
+    align-items: center;
+
+    & > div {
+        height: 78%;
+        width: 35%;
+    }
+}
+
+/* ############### DPAD ############### */
+
+#dpad {
+    position: relative;
+
+    & div {
+        background-color: rgb(56, 56, 56);
+        position: absolute;
+        border-radius: 5px;
+        z-index: 2;
+    }
+}
+
+div#center {
+    height: 20%;
+    width: 20%;
+    left: 39.5%;
+    top: 39.5%;
+    z-index: 3;
+    border-radius: 50%;
+    border: groove 3px rgba(56, 56, 56, 0.193);
+}
+
+#up {
+    left: 37.5%;
+    width: 25%;
+    height: 45%;
+    top: 5%;
+}
+
+div#up.press {
+    background-image: linear-gradient(to top, rgb(65, 65, 65), rgba(22, 22, 22, 0.81));
+    border-color: rgba(118, 118, 118, 0.493);
+    border-top-style: ridge;
+}
+
+#down {
+    left: 37.5%;
+    bottom: 0;
+    width: 25%;
+    height: 45%;
+    bottom: 5%;
+}
+
+div#down.press {
+    background-image: linear-gradient(to bottom, rgb(61, 61, 61), rgba(22, 22, 22, 0.81));
+    border-color: rgba(118, 118, 118, 0.493);
+    border-bottom-style: ridge;
+}
+
+#left {
+    width: 45%;
+    height: 25%;
+    top: 37.5%;
+    left: 5%;
+}
+
+div#left.press {
+    background-image: linear-gradient(to left, rgb(59, 59, 59), rgba(22, 22, 22, 0.81));
+    border-color: rgba(118, 118, 118, 0.493);
+    border-left-style: ridge;
+}
+
+#right {
+    width: 45%;
+    height: 25%;
+    top: 37.5%;
+    right: 5%;
+}
+
+div#right.press {
+    background-image: linear-gradient(to right, rgb(65, 65, 65), rgba(22, 22, 22, 0.81));
+    border-color: rgba(118, 118, 118, 0.493);
+    border-right-style: ridge;
+}
+
+/* ############### A/B BUTTONS ############### */
+
+#buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: rotate(-25deg);
+    width: 45% !important;
+    height: 70% !important;
+
+    & > div {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        gap: clamp(5px, 2vw, 15px);
+
+        & p {
+            font-size: clamp(.6rem, 1.8vw, 1.3rem);
+            font-family: 'Press Start 2P', monospace, system-ui;
+        }
+
+        & .btn-ab {
+                height: 40%;
+                width: 56%;
+                background-color: rgb(166,44,97);
+                border-radius: 50%;
+                box-shadow: 0 0 2px 1px rgba(39, 0, 0, 0.441);
+                border-style: groove;
+                border-color: rgba(166, 44, 97, 0.357);
+            }
+            & .btn-ab.press {
+                background-color: rgb(146, 38, 85);
+                border-style: inset;
+        }
+    }
+}
+
+
+/* ################# START/SELECT ############## */
+
+#startSelectRow {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}
+
+.start-select {
+    text-align: center;
+    font-family: 'Press Start 2P', monospace, system-ui;
+    font-size: clamp(.3rem, 1.3vw, .6rem);
+    letter-spacing: .1ch;
+    width: 12%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    transform: rotate(-25deg);
+}
+
+#btnStart {
+    width: 100%;
+    height: 10%;
+    background-color: rgb(94, 94, 94);
+    border-radius: 20px;
+}
+
+#btnStart.press {
+    border-style: inset;
+    background-color: rgb(65, 65, 65);
+}
+
+#bottomLogo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    & p {
+        width: 20%;
+        text-align: center;
+        border: inset 2px rgba(128, 128, 128, 0.141);
+        border-radius: 15px;
+        letter-spacing: .1ch;
+        font-weight: bold;
+        font-size: clamp(.5rem, 1.3vw, .8rem);
+        color: rgba(128, 128, 128, 0.373);
+    }
+}
