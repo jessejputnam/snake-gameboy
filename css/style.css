@@ -89,7 +89,7 @@ main {
     flex-direction: column;
 }
 
-#menu {
+.menus {
     background-color: var(--screen-bkgd2);
     border: ridge 4px var(--screen-bkgd);
     border-radius: 5px;
@@ -118,13 +118,19 @@ main {
         & > li {
             font-size: clamp(.4rem, 1.2vw, .6rem);
             list-style: none;
+            padding: .1rem .2rem;
+            text-transform: uppercase;
         }
 
-        & li.select::before {
-            content: "‣"
+        & li.select {
+            color: var(--screen-bkgd);
+            background-color: var(--screen-darker);
         } 
     }
+}
 
+.menus.hidden {
+    display: none;
 }
 
 #gameInfo {

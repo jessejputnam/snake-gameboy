@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <script type="module" src="js/main.js" defer></script>
+    <script type="module" src="main.js" defer></script>
 
     <title>Snake</title>
 </head>
@@ -23,15 +23,21 @@
             <div id="window">
                 <div id="power"></div>
                 <div id="screen">
-                    <!-- <div id="menu">
-                        <p>LEVEL SELECT:</p>
+                    <div class="menus hidden" id="gameover">
+                        <p>GAME OVER</p>
                         <ul>
-                            <li class="select">EASY</li>
-                            <li>MEDIUM</li>
-                            <li>HARD</li>
-                            <li>INSANE</li>
+                            <li class="select">TRY AGAIN</li>
                         </ul>
-                    </div> -->
+                    </div>
+                    <div class="menus" id="menu">
+                        <p>LEVEL SELECT:</p>
+                        <ul id="menuitems">
+                            <li>easy</li>
+                            <li>medium</li>
+                            <li>hard</li>
+                            <li>insane</li>
+                        </ul>
+                    </div>
                     <div id="gameInfo">
                         <p>SCORE: <span id="score">0</span></p>
                         <p>HI SCORE: <span id="hiscore">0</span></p>
