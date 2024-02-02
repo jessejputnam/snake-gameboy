@@ -1,3 +1,6 @@
+import { coordToIdx } from "../lib/helpers.js";
+import { COLS, ROWS } from "../lib/vars.js";
+
 // ##################### DOM Elements ######################
 
 const screen = document.getElementById("innerScreen");
@@ -11,10 +14,13 @@ const btnB = document.getElementById("bbtn");
 const btnStart = document.getElementById("btnStart");
 const btnSelect = document.getElementById("btnSelect");
 
+const scoreEl = document.getElementById("score");
+const hiscoreEl = document.getElementById("hiscore");
+
 // ##################### Functions ######################
 function buildGrid() {
-  for (let rows = 0; rows < 30; rows++) {
-    for (let cols = 0; cols < 40; cols++) {
+  for (let rows = 0; rows < ROWS; rows++) {
+    for (let cols = 0; cols < COLS; cols++) {
       const div = document.createElement("div");
       div.classList.add("cell");
       screen.append(div);
@@ -32,7 +38,8 @@ function mouseUp(e) {
   b.classList.remove("press");
 }
 
-function pressVisual(key) {
+function pressVisual(e) {
+  const key = e.key;
   if (key === "ArrowUp") btnUp.classList.add("press");
   if (key === "ArrowDown") btnDown.classList.add("press");
   if (key === "ArrowLeft") btnLeft.classList.add("press");
@@ -45,7 +52,8 @@ function pressVisual(key) {
   if (key === "Shift") btnSelect.classList.add("press");
 }
 
-function releaseVisual(key) {
+function releaseVisual(e) {
+  const key = e.key;
   if (key === "ArrowUp") btnUp.classList.remove("press");
   if (key === "ArrowDown") btnDown.classList.remove("press");
   if (key === "ArrowLeft") btnLeft.classList.remove("press");
@@ -58,15 +66,26 @@ function releaseVisual(key) {
   if (key === "Shift") btnSelect.classList.remove("press");
 }
 
-function renderBoard(snake, food) {
+function renderBoard(snake, foodIdx) {
   for (let cell of screen.children) {
     cell.classList.remove("snake");
+    cell.classList.remove("food");
   }
-  snake.coords.forEach((coord) => {
-    const [x, y] = coord;
-    const idx = y + x * 40;
+
+  snake.forEach((coord) => {
+    const idx = coordToIdx(coord);
     screen.children[idx].classList.add("snake");
   });
+
+  if (foodIdx) screen.children[foodIdx].classList.add("food");
+}
+
+function updateScore(score) {
+  scoreEl.textContent = score;
+}
+
+function updateHiscore(hiscore) {
+  hiscoreEl.textContent = hiscore;
 }
 
 export {
@@ -75,5 +94,7 @@ export {
   mouseUp,
   pressVisual,
   releaseVisual,
-  renderBoard
+  renderBoard,
+  updateScore,
+  updateHiscore
 };
