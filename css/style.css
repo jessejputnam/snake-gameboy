@@ -15,6 +15,7 @@ body {
     font-family:monospace;
     color:rgb(7, 7, 120);
     padding-top: 25px;
+    height: 100vh;
 }
 
 header {
